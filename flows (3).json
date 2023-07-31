@@ -1,0 +1,80 @@
+[
+    {
+        "id": "fc4fd6a5813f60c6",
+        "type": "subflow",
+        "name": "cowsay",
+        "info": "A node to generate ascii art using cowsay module ",
+        "category": "advanced",
+        "in": [
+            {
+                "x": 60,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "4ab61779ecf88f11"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 340,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "4ab61779ecf88f11",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {
+            "module": "node-red-contrib-cowsay0902",
+            "type": "cowsay",
+            "version": "0.0.1",
+            "author": "kerorin@nodered.jp",
+            "desc": "A nodento generate ascii art using cowsay module",
+            "keywords": "node-red,cowsay",
+            "license": "Apache-2.0"
+        },
+        "color": "#3FADB5",
+        "icon": "font-awesome/fa-frown-o"
+    },
+    {
+        "id": "4ab61779ecf88f11",
+        "type": "function",
+        "z": "fc4fd6a5813f60c6",
+        "name": "function 1",
+        "func": "msg.payload=cowsay2.say(String(msg.payload));\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "cowsay2",
+                "module": "cowsay2"
+            }
+        ],
+        "x": 200,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "545dafa13b6e4da0",
+        "type": "subflow:fc4fd6a5813f60c6",
+        "z": "ffdb95a93847459a",
+        "name": "",
+        "x": 240,
+        "y": 240,
+        "wires": [
+            [
+                "5f884169ef03fa92"
+            ]
+        ]
+    }
+]
